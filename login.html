@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Login - SB Admin</title>
+	<link rel="icon" href="css/favicon.ico" type="image/ico">
+	<link href="css/styles.css" rel="stylesheet" />
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+	<style>
+		/* Estilo para el mensaje */
+		body {
+			background-image: url(css/fondo1.jpg);
+		}
+		
+		.card {
+			width: 430px;
+			position:fixed;
+			top: 45%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+		}
+
+		#mensaje {
+			display: none;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(81, 81, 81, 0.8);
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			text-align: center;
+		}
+
+		#mensaje p {
+			size: 100px;
+			font-weight: 700;
+			color: #fff;
+		}
+
+		#mensaje button {
+			border-radius: 8px;
+			background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 20px;
+			border: 10px #fff;
+			font-weight: 500;
+
+		}
+
+		@keyframes animacionArcoIris {
+			0% {
+				box-shadow: 10px 0px 40px rgb(255, 191, 0);
+			}
+
+			20% {
+				box-shadow: 10px 0px 40px rgb(33, 96, 167);
+			}
+
+			40% {
+				box-shadow: 10px 0px 40px rgb(255, 191, 0);
+			}
+
+			60% {
+				box-shadow: 10px 0px 40px rgb(156, 116, 97);
+			}
+
+			80% {
+				box-shadow: 10px 0px 40px rgb(255, 0, 144);
+			}
+
+			100% {
+				box-shadow: 10px 0px 40px rgb(255, 85, 0);
+			}
+
+		}
+	</style>
+</head>
+
+<body >
+	<div id="layoutAuthentication">
+		<div id="layoutAuthentication_content">
+			<main>
+				<div class="container">
+					<div class="card">
+						<div class="card-header">
+							<div class="row align-items-center">
+								<div class="col-auto">
+									<img src="css/escudo escuela.png" style="width: 60px;" alt="Escuela" width="100">
+								</div>
+								<div class="col-7">
+									<h3 class="font-weight-light text-center mb-0">Iniciar Sesión</h3>
+								</div>
+							</div>
+						</div>						
+						<div class="card-body">
+							<form action="./login.php" method="post">
+								<div class="form-floating mb-3">
+									<input class="form-control" name="username" id="username" type="text" placeholder="" required>
+									<label for="username">Nombre de Usuario</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input class="form-control" name="contraseña" id="contraseña" type="password" placeholder="" required>
+									<label for="contraseña">Contraseña</label>
+								</div>
+								<div class="row mb-2">
+									<div class="col-auto "><a class="small" id="miBoton">Olvidé mi contraseña</a></div>
+								</div>
+								<div class="d-flex align-items-center justify-content-center mt-2 mb-0"><button type="submit" class="btn btn-primary">Iniciar sesión</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<div id="mensaje">
+			<p>En caso de olvidar tu contraseña, Consultar con el Administrador</p>
+			<button class="btn btn-secondary" id="cerrarMensaje">Cerrar</button>
+		</div>
+		<div id="layoutAuthentication_footer">
+			<footer class="py-4 bg-light mt-auto">
+					<div class="container-fluid px-4">
+							<div class="d-flex align-items-center justify-content-between small">
+									<div class="text-muted">Copyright &copy; E.E.S.T. Nº2</div>
+								 
+							</div>
+					</div>
+			</footer>
+	</div>
+	</div>
+	
+	<div style="position: absolute; top: 30px; left: 30px; color: #ffffff; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+		<h1  style="text-shadow: 0px 3px 10px rgb(0, 0, 0);">S.D.R.A</h1>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		// Función para mostrar el mensaje cuando se hace clic en el enlace
+		document.getElementById("miBoton").addEventListener("click", function (event) {
+			event.preventDefault(); // Prevenir la acción predeterminada de la etiqueta <a>
+
+			// Mostrar el mensaje
+			document.getElementById("mensaje").style.display = "block";
+		});
+
+		// Función para cerrar el mensaje
+		document.getElementById("cerrarMensaje").addEventListener("click", function () {
+			// Ocultar el mensaje
+			document.getElementById("mensaje").style.display = "none";
+		});
+	</script>
+</body>
+
+
+</html>
