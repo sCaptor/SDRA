@@ -5,6 +5,6 @@
 
 													// Conecta con el SERVIDOR WEB LOCAL: localhost - super_user: root - pass: (sin password)
 													// Luego con la base de datos en MYSQL formulario, sino muestra el Error de conexión.
-$conn = mysqli_connect('localhost', 'root', 'monte238XX', 'tecnica2db') or die (mysqli_error($mysqli));
+$conn = mysqli_connect('localhost', 'root', '', 'tecnica2db') or die (mysqli_error($mysqli));
 ?>
 
